@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Nagitha Risky Amelia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --sage-green: #b5c1a0;
+            --cream-light: #f2ede4;
+            --soft-white: #ffffff;
+            --text-olive: #5d634f;
+            --accent-orange: #e8a58e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--cream-light);
+            color: var(--text-olive);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* --- Header / Hero --- */
+        .hero-section {
+            background: var(--sage-green);
+            padding: 80px 20px;
+            border-bottom-left-radius: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-oval {
+            background: var(--soft-white);
+            padding: 40px 60px;
+            border-radius: 50%;
+            border: 2px dashed var(--sage-green);
+            box-shadow: 0 0 0 8px var(--soft-white);
+            margin-bottom: 30px;
+        }
+
+        .header-oval h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 3.5rem;
+            font-style: italic;
+            color: var(--text-olive);
+        }
+
+        .student-info {
+            background: var(--soft-white);
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            width: fit-content;
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 900px;
+            margin: -50px auto 40px;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--soft-white);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* --- About Section --- */
+        .about-text {
+            text-align: center;
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Project Grid --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-item {
+            background: var(--cream-light);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #e0dbd3;
+            transition: 0.3s;
+        }
+
+        .project-item:hover { transform: translateY(-5px); }
+
+        /* --- Skills Graphic --- */
+        .skill-group { margin-bottom: 20px; }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .bar-container {
+            background: #e5e0d8;
+            height: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            background: var(--sage-green);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* --- Education Timeline --- */
+        .edu-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .edu-item {
+            font-size: 0.9rem;
+            padding: 5px 15px;
+            background: var(--cream-light);
+            border-radius: 50px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            color: var(--text-olive);
+        }
+
+        @media (max-width: 600px) {
+            .header-oval h1 { font-size: 2.2rem; }
+            .header-oval { padding: 30px 40px; }
+            .container { margin-top: -30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="header-oval">
+            <h1>Nagitha</h1>
+        </div>
+        <div class="student-info">
+            <p><strong>Nagitha Risky Amelia</strong></p>
+            <p>Mahasiswa Ilmu Komputer, Universitas Halu Oleo</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>About Me</h2>
+            <div class="about-text">
+                <p>Halo! Saya Nagitha. Saya memiliki ketertarikan besar dalam mengeksplorasi teknologi melalui kode dan menciptakan desain yang bersih serta fungsional.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Technical Skills</h2>
+            
+            <div class="skill-group">
+                <div class="skill-header"><span>Java & C++</span><span>20%</span></div>
+                <div class="bar-container"><div class="bar-fill" style="width: 20%;"></div></div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-header"><span>Laravel & Python</span><span>20%</span></div>
+                <div class="bar-container"><div class="bar-fill" style="width: 20%;"></div></div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-header"><span>HTML, CSS & MySQL</span><span>20%</span></div>
+                <div class="bar-container"><div class="bar-fill" style="width: 20%;"></div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Recent Projects</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <h3>Software Analysis (UMKM)</h3>
+                    <p style="font-size: 0.8rem; margin-top: 5px;">Menganalisis dan merancang solusi digital untuk operasional UMKM lokal.</p>
+                </div>
+                <div class="project-item">
+                    <h3>NutriCare(SDGS)</h3>
+                    <p style="font-size: 0.8rem; margin-top: 5px;">Sistem yang dirancang untuk memberikan rekomendasi pola makan sehat berdasarkan data pengguna.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Java Programming</h3>
+                    <p style="font-size: 0.8rem; margin-top: 5px;">Pengembangan logika dasar dan struktur data menggunakan Java.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Web Portfolio</h3>
+                    <p style="font-size: 0.8rem; margin-top: 5px;">Membangun identitas digital menggunakan GitHub Pages.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Education</h2>
+            <div class="edu-list">
+                <div class="edu-item">SDN 01 Poasia</div>
+                <div class="edu-item">SMPN 05 Kendari</div>
+                <div class="edu-item">SMAN 02 Kendari</div>
+                <div class="edu-item" style="background: var(--sage-green); color: white;">Universitas Halu Oleo</div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>Contact</h2>
+            <p>Email: <strong>nagithariskya@gmail.com</strong></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Crafted with love by Nagitha.
+    </footer>
+
+</body>
+</html>

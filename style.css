@@ -1,0 +1,292 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /* Efek scroll halus */
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #4a90e2; /* Warna aksen biru modern */
+}
+
+strong {
+    color: #4a90e2;
+}
+
+/* --- Navigasi & Header --- */
+header {
+    background: #ffffff;
+    position: fixed; /* Header menempel di atas */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #4a90e2;
+}
+
+/* Tombol Menu Mobile (Responsif) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: #333;
+}
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f4f7f6;
+    padding-top: 100px; /* Menghindari overlap header */
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 30px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #357abd;
+}
+
+/* --- About & Skills Section --- */
+.about-grid p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-tag {
+    background-color: #e6f0fa;
+    color: #4a90e2;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- Projects Section --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-info p {
+    color: #777;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.project-info .tech-stack {
+    font-size: 0.85rem;
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+.btn-sm {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #4a90e2;
+    font-weight: 600;
+    border: 1px solid #4a90e2;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-sm:hover {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+footer h3 {
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #aaaaaa;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: #ffffff;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- Media Queries (Responsif) --- */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: none; /* Sembunyikan menu desktop */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Tampilkan saat menu hamburger diklik */
+    }
+
+    .menu-toggle {
+        display: block; /* Tampilkan hamburger button */
+    }
+}
