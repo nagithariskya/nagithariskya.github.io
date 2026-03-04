@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD Ayumm! ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #ff85a2;
+            --secondary: #fbb1bd;
+            --bg: #fdf0f0;
+            --text: #4a4a4a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Navigasi Simpel */
+        nav {
+            position: fixed;
+            top: 0; width: 100%; padding: 20px;
+            display: flex; justify-content: center; gap: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        nav a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; }
+
+        /* Section Styling */
+        section {
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        #home {
+            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
+                        url('https://share.google/x75rJ0LkPFSCu9JUS');
+            background-size: cover;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: var(--primary); margin-bottom: 10px; }
+        
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; width: 100%; max-width: 900px; margin-top: 30px;
+        }
+
+        .img-card {
+            height: 250px; background: #ddd; border-radius: 15px;
+            overflow: hidden; position: relative;
+        }
+
+        .img-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .img-card:hover img { transform: scale(1.1); }
+
+        /* Wish Section */
+        #wishes { background-color: #fff; }
+        .wish-box {
+            font-style: italic; font-size: 1.2rem; line-height: 1.8;
+            max-width: 500px; color: #666;
+        }
+
+        footer { padding: 40px; background: var(--secondary); color: white; font-size: 0.8rem; }
+
+        .btn-celebrate {
+            background: var(--primary); color: white; border: none;
+            padding: 15px 30px; border-radius: 50px; cursor: pointer;
+            font-weight: 600; margin-top: 20px; transition: 0.3s;
+        }
+        .btn-celebrate:hover { letter-spacing: 2px; box-shadow: 0 5px 15px rgba(255,133,162,0.4); }
+
+        /* Style Khusus Bagian Home */
+        .date-text {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .typing-text {
+            min-height: 80px; /* Biar layout gak goyang saat ngetik */
+        }
+
+        .sub-text {
+            font-size: 1.1rem;
+            color: #777;
+            margin-top: 15px;
+        }
+
+        .cta-group {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-scroll {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-scroll:hover {
+            transform: translateY(5px);
+        }
+
+        .floating-icons {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Style Khusus Bagian Memories */
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 50px;
+        }
+
+        .memory-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1100px;
+        }
+
+        .memory-card {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            width: 300px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(255, 133, 162, 0.2);
+        }
+
+        .memory-img {
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .memory-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .memory-info h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .memory-info p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Style Khusus Bagian Wishes */
+        #wishes {
+            background: linear-gradient(180deg, var(--bg) 0%, #fff 100%);
+        }
+
+        .wish-container {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 40px;
+            box-shadow: 0 15px 50px rgba(255, 133, 162, 0.15);
+            max-width: 700px;
+            position: relative;
+            border: 2px dashed var(--secondary);
+        }
+
+        .envelope-icon {
+            font-size: 3rem;
+            position: absolute;
+            top: -30px;
+            background: var(--bg);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .wish-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .wish-paper {
+            text-align: left;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .wish-text {
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+        }
+
+        .name-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /* Animasi Hati Berterbangan */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+            pointer-events: none;
+        }
+
+        .floating-hearts span {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: floatUp 4s infinite ease-in;
+            opacity: 0;
+        }
+
+        .floating-hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .floating-hearts span:nth-child(2) { left: 80%; animation-delay: 1s; }
+        .floating-hearts span:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .floating-hearts span:nth-child(4) { left: 70%; animation-delay: 3s; }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-200px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#memories">Memories</a>
+        <a href="#wishes">Wishes</a>
+    </nav>
+
+    <section id="home">
+    <div class="glass-card" data-aos="zoom-in">
+        <div class="floating-icons">✨ 🎈 🎂</div>
+        <p class="date-text">Rabu, 04 Maret 2026</p>
+        
+        <h1 class="typing-text">Happy Birthday, <span id="name-target">Ayumm!</span></h1>
+        
+        <p class="sub-text">Seseorang yang luar biasa sedang merayakan hari spesialnya hari ini.</p>
+        
+        <div class="cta-group">
+            <button class="btn-celebrate" onclick="makeRain()">Beri Kejutan! 🎊</button>
+            <a href="#memories" class="btn-scroll">Lihat Kenangan ↓</a>
+        </div>
+    </div>
+    </section>
+
+    <section id="memories">
+    <div class="container">
+        <h2 data-aos="fade-down" class="section-title">Sweet Memories</h2>
+        <p data-aos="fade-up" class="section-subtitle">Ini dia beberapa momen untuk couple gisal (gita salum).</p>
+        
+        <div class="memory-grid">
+            <div class="memory-card" data-aos="fade-right">
+                <div class="memory-img">
+                    <img src="gmb.jpeg" alt="Moment 1">
+                </div>
+                <div class="memory-info">
+                    <h3>comel</h3>
+                    <p>Ini waktu sa ultah kita foto berdua, lucuuu abieszzz</p>
+                </div>
+            </div>
+
+            <div class="memory-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="memory-img">
+                    <img src="gmb 2.jpeg" alt="Moment 2">
+                </div>
+                <div class="memory-info">
+                    <h3>Dating</h3>
+                    <p>Fotbar pas kita jalan jalan.</p>
+                </div>
+            </div>
+
+            <div class="memory-card" data-aos="fade-left" data-aos-delay="400">
+                <div class="memory-img">
+                    <img src="gmb 3.jpeg" alt="Moment 3">
+                </div>
+                <div class="memory-info">
+                    <h3>yeyy mie ayam</h3>
+                    <p>Ini dia pertarungan sengit memperebutkan mie ayam</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="wishes">
+    <div class="wish-container" data-aos="zoom-in-up">
+        <div class="envelope-icon">✉️</div>
+        <h2 class="wish-title">A Special Wish for You</h2>
+        
+        <div class="wish-paper">
+            <p class="wish-text">
+                "Di hari spesialmu ini, sa cuma mau bilang terima kasih sudah menjadi bagian dari hidupku. Semoga di umur yang baru ini, setiap langkahmu selalu dijaga, setiap usahamu membuahkan hasil, dan selalu bahagia. Makasi sudah selalu ada untuk saya kapanpun sa butuh, apalagi pas setiap hari mandi dirumah mu wkwk, makan, sudah ky rumah sendiri"
+            </p>
+            <p class="wish-text">
+                "Tetap jadi <strong>Ayumm</strong> yang asbun, agak agak tidak waras, dan apa adanya. Dunia ini lebih indah karena ada kita di dalamnya!"
+            </p>
+            <div class="signature">
+                <p>With Love,</p>
+                <h3 class="name-signature">Nagitha ✨</h3>
+            </div>
+        </div>
+
+        <div class="floating-hearts">
+            <span>❤️</span><span>💖</span><span>✨</span><span>🌸</span>
+        </div>
+    </div>
+    </section>
+
+    <footer>
+        <p>Created with ❤️ by Nagitha</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        // Inisialisasi Animasi Muncul saat Scroll
+        AOS.init({ duration: 1000, once: true });
+
+        // Fungsi Kejutan Confetti
+        function makeRain() {
+            var duration = 3 * 1000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#ff85a2', '#fbb1bd']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#ff85a2', '#fbb1bd']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        // Efek Typing Sederhana
+        const text = "Happy Birthday, Ayumm! ✨";
+        let index = 0;
+        const target = document.querySelector('.typing-text');
+
+        // Kosongkan dulu teks aslinya agar bisa diisi oleh animasi
+        target.innerHTML = ""; 
+
+        function typeWriter() {
+            if (index < text.length) {
+                target.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // Kecepatan ngetik (100ms)
+            }
+        }
+
+        // Jalankan fungsi saat halaman dimuat
+        window.onload = () => {
+            typeWriter();
+            AOS.init({ duration: 1000, once: true });
+        };
+
+    </script>
+</body>
+</html>
